@@ -34,7 +34,8 @@
                           <th>Marca</th>
                           <th>Cantidad</th>
                           <th>Tipo</th>
-                          <th>Descripcion</th>
+                          <th>Estado</th>
+                          <th>Ubicacion</th>
                           <th>Ficha tecnica</th>
                           <th>Acciones</th>
                         </tr>
@@ -46,24 +47,26 @@
                               <td>{{$equipo->marca}}</td>
                               <td>{{$equipo->cantidad}}</td>
                               <td>{{$equipo->tipo}}</td>
-                              <td>{{$equipo->descripcion}}</td>
+                              <td>{{$equipo->estado}}</td>
+                              <td>{{$equipo->ubicacion}}</td>
                               <td><img src="{{asset('img/pdf.png')}}" height="40" width="40"></td>
                               <td class="td-actions text-left">
                                 
-                                <a href="{{route('equipos.edit', $equipo->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
+                                <div class="row mb-3">
 
-                                <form action="{{route('equipos.destroy', $equipo->id)}} " method="POST" class="form-eliminar">
-                                  @csrf
-                                  @method('DELETE')
-                                  <button  class="btn btn-danger" type="submit" rel="tooltip">
-                                    <i class="material-icons">delete</i>
-                                 </button>
-                                </form>
-
-                                <a href="{{route('equipos.edit2', $equipo->id)}}" class="btn btn-success"><i class="material-icons">visibility</i></a>
+                                     <a href="{{route('equipos.edit', $equipo->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
+                                    <form action="{{route('equipos.destroy', $equipo->id)}} " method="POST" class="form-eliminar">
+                                      @csrf
+                                      @method('DELETE')
+                                      <button  class="btn btn-danger" type="submit" rel="tooltip">
+                                        <i class="material-icons">delete</i>
+                                     </button>
+                                    </form>
+                                    <a href="{{route('equipos.edit2', $equipo->id)}}" class="btn btn-success"><i class="material-icons">visibility</i></a>
+                                  
+                                </div>
                              
-                              </td>
-                              
+                              </td>   
                            </tr>
                         @endforeach
                       

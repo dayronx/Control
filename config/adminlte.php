@@ -296,7 +296,7 @@ return [
         ['header' => 'UBICACION'],
       
         [
-            'text' => 'ubicacion',
+            'text' => 'Ubicacion',
             'url'  => '#',
             'icon'    => 'fas fa-fw fa-file',
             'icon_color' => 'cyan',

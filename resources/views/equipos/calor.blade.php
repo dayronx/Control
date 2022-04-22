@@ -24,22 +24,40 @@
                   <th>Marca</th>
                   <th>Cantidad</th>
                   <th>Tipo</th>
-                  <th>Descripcion</th>
+                  <th>estado</th>
+                  <th>ubicacion</th>
                   <th>Ficha tecnica</th>
                   <th>Acciones</th>
                 </thead>
                 <tbody>
                   @foreach ($equipos as $equipo )
-                     <tr>
-                        <td>{{$equipo->nombre}}</td>
-                        <td>{{$equipo->marca}}</td>
-                        <td>{{$equipo->cantidad}}</td>
-                        <td>{{$equipo->tipo}}</td>
-                        <td>{{$equipo->descripcion}}</td>
-                        <td>{{$equipo->PDF}}</td>
-                        
-                     </tr>
-                  @endforeach
+                  <tr style="text-align: center">
+                     <td>{{$equipo->nombre}}</td>
+                     <td>{{$equipo->marca}}</td>
+                     <td>{{$equipo->cantidad}}</td>
+                     <td>{{$equipo->tipo}}</td>
+                     <td>{{$equipo->estado}}</td>
+                     <td>{{$equipo->ubicacion}}</td>
+                     <td><img src="{{asset('img/pdf.png')}}" height="40" width="40"></td>
+                     <td class="td-actions text-left">
+                       
+                       <div class="row mb-3">
+
+                            <a href="{{route('equipos.edit', $equipo->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
+                           <form action="{{route('equipos.destroy', $equipo->id)}} " method="POST" class="form-eliminar">
+                             @csrf
+                             @method('DELETE')
+                             <button  class="btn btn-danger" type="submit" rel="tooltip">
+                               <i class="material-icons">delete</i>
+                            </button>
+                           </form>
+                           <a href="{{route('equipos.edit2', $equipo->id)}}" class="btn btn-success"><i class="material-icons">visibility</i></a>
+                         
+                       </div>
+                    
+                     </td>   
+                  </tr>
+               @endforeach
                 
                 </tbody>
               </table>

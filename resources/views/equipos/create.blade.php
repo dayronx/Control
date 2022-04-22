@@ -5,108 +5,131 @@
 
 @section('content_header')
 
-<h4>Registro Equipo  Nuevo </h4>
+
 @stop
 
 
 @section('content')
+ <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+        <script src="app2.js"></script>
+    </head>
+<body>
+    @csrf
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h3>Registro de Equipos</h3>
+                <hr>
+                <form action="{{route('equipos.store')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+
+                    <div class="mb-3">
+                        
+                        <input type="text" class="form-control" id="email" placeholder="Nombre de la Maquina" name="nombre">
+                    </div> 
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            
+                            <input type="text" class="form-control" id="nombre" placeholder="Marca" name="marca">
+
+                        </div>
+                        <div class="col-md-4">
+                          
+                            <input type="number" placeholder="Cantidad" class="form-control" name="cantidad" id="apellido">
+
+                        </div>
+                        <div class="col-md-4">
+                        
+                            <input type="number" placeholder="Prioridad" class="form-control" name="prioridad" id="apellido">
+
+                        </div>
+
+                    </div>  
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                          
+                            <label class="form-label">Tipo de Maquina:</label>
+                            <select class="form-select" aria-label="Default select example"  name="tipo">
+                                <option value="calor">Maquina de Calor</option>
+                                <option value="frio">Maquina de Frio</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Ubicacion: </label>
+                            <select class="form-select" aria-label="Default select example"  name="ubicacion">
+                                <option value="Ambiente de Cocina">Ambiente de Cocina</option>
+                                <option value="Biotecnologia Vegetal">Biotecnologia Vegetal</option>
+                                <option value="Carnicos">Carnicos</option>
+                                <option value="Laboratorio de Cafe">Laboratorio de Cafe</option>
+                                <option value="Laboratorio de Quimica">        Laboratorio de Quimica</option>
+                                <option value="Laboratorio de Microorganismos">Laboratorio de Microorganismos</option>
+                                <option value="Restaurante de los Aprendices">Restaurante de los Aprendices</option>
+                                <option value="Taller Fruver">Taller Fruver</option>
+                                <option value="Taller Lacteos">Taller Lacteos</option>
+                                <option value="Taller de Panificacion">Taller de Panificacion</option>
+                                <option value="Taller de Produccion">Taller de Produccion </option>
+                            </select>
+                         </div>
+                         <div class="col-md-2">
+
+                            <label class="form-label">Estado:</label>
+                            <select class="form-select" aria-label="Default select example"  name="estado">
+                                <option value="Bueno">Bueno</option>
+                                <option value="Malo">Malo</option>
+                                <option value="En Reparacion">En Reparacion </option>
+                            </select>
+                            
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Descripcion de la Maquina:</label>
+                        <textarea class="form-control" name="descripcion" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            
+                            <label >Anexar Ficha Tecnica:</label>
+                          
+                            <p>
+                                  PDF:
+                                 <input type="file" name="PDF">
+                            </p>
+                               
+
+                        </div>
+                        <div class="col-md-6">
+                          
+                            <label >Subir Foto de la Maquina:</label>
+                                
+                            <p>
+                                 FOTO:
+                                 <input type="file" name="foto">
+                            </p>     
+
+                        </div>
+                       
+                    </div>
+                    <div class="d-flex justify-content-end col-12">
+                      <button type="submit"  class= "btn btn-secondary" >GUARDAR FORMULARIO</button>
+                    </div>
+                  
+                </form>   
+            </div> 
+        </div> 
+    </div>          
+</body>
+</html>
+
  
- <form action="{{route('equipos.store')}}" method="POST" enctype="multipart/form-data">
-  
-   @csrf
-     <div class="row">
-         <div class="col-12 ">
-           <div>
-            <label  >
-              Nombre:
-              <br/>
-              <input  class="form-control" type="text" name="nombre">
-            </label>
-           </div>
-         
-         </div>
-         <div  class="col-lg-4 col-12">
-           <div>
-            <label >
-              Marca:
-              <br/>
-              <input type="text" name="marca" class="form-control">
-            </label>
-           </div>
-          </div>
-          <div  class="col-lg-4 col-12">
-            <div>
-              <label >
-                Cantidad:
-                <br/>
-                <input type="number" name="cantidad" class="form-control">
-              </label>
-            </div>
-          </div>
-          <div class="col-lg-4 col-12">
-             <div>
-              <label >
-                Tipo:
-                <select class="form-select" aria-label="Default select example" name="tipo">
-                  <option value="calor">Maquina de Calor</option>
-                  <option value="frio">Maquina de Frio</option>
-              </select>
-              </label>
-             </div>
-          </div>
-          <div class="col-lg-4 col-12">
-            <div>
-              <label >
-                Ubicacion:
-                <br/>
-                <input type="text" name="ubicacion"  class="form-control">
-              </label>
-            </div>
-         </div>
-         <div class="col-lg-8 col-12">
-          <div>
-            <label >
-              Descripcion
-              <br/>
-              <textarea name="descripcion" rows="5" ></textarea>
-            </label>
-          </div>
-       </div>
-       <div class="col-lg-6 col-12">
-        <div>
-          <label >
-            Ficha Tecnica:
-            <br/>
-            <p>
-              PDF:
-             <input type="file" name="PDF">
-           </p>
-           </label>
-        </div>
-     </div>
-     <div class="col-lg-6 col-12">
-      <div>
-        <label >
-          Foto:
-          <br/>
-          <p>
-           <input type="file" name="foto">
-         </p>
-         </label>
-      </div>
-   </div>
-     </div>
-     <br/>
-     <br/>
-    
-     <div class="d-flex justify-content-end col-12">
-      <button type="submit"  class= "btn btn-secondary" >GUARDAR FORMULARIO</button>
-     </div>
-     <br/>
-
-
-  
- </form>
   
   
   
