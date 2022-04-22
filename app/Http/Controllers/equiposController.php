@@ -31,8 +31,8 @@ class equiposController extends Controller
     public function create(){
         return view('equipos.create');
     }
-    public function reporte(){
-        return view ('equipos.reporte');
+    public function reporte(Equipos $equipos){
+        return view ('equipos.reporte' , compact('equipos'));
     }
 
     public function store(Request $request){

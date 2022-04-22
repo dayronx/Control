@@ -179,12 +179,23 @@
                             
                         
                         </div>
-                        <div class="col-md-12">
+                        <div class="row mb-3">
+
+                            <div class="col-md-8">
                             <div>
                                 <label for="numeroHijos" class="form-label">¿que piezas se cambiaron?</label>
                                 <input type="text" class="form-control" id="discapacidad-desc">
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <label > Ficha tecnica:</label>
+                            <br/>
+                           <a target="_blank" href="{{asset($equipos->PDF)}}"><img height="100" width="80" src="{{asset('img/pdf.png')}}" alt=""></a> 
+                            
+                        </div>
+
+                        </div>
+                        
                         <div class="col-md-12"> 
                             <label for="email" class="form-label">Descripcion del Mantenimiento</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
