@@ -239,6 +239,7 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+      
         [
             'text'        => 'Alertas',
             'url'         => 'admin/pages',
@@ -288,11 +289,15 @@ return [
             
         ],
         [
-            'text'    => 'Agregar Equipo',
+            'text'    => ' Reporte de Mantenimiento',
             'icon'    => 'fas fa-fw fa-share',
-            'icon_color' => 'yellow',
+            'icon_color' => 'red',
+            'route'    => 'equipos.reporte'
+
+          
             
         ],
+     
         ['header' => 'UBICACION'],
       
         [

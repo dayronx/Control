@@ -30,6 +30,7 @@ Route::get('equipos',                  [equiposController::class, 'index'])   ->
 Route::get('equipos/create',           [equiposController::class, 'create'])  ->name('equipos.create');
 Route::post('equipos',                 [equiposController::class, 'store'])   ->name('equipos.store');
 Route::get('equipos/calor',            [equiposController::class, 'calor'])   ->name('equipos.calor');
+Route::get('equipos/reporte',          [equiposController::class, 'reporte']) ->name('equipos.reporte');
 Route::get('equipos/{equipos}/edit',   [equiposController::class, 'edit'])    ->name('equipos.edit');
 Route::get('equipos/{equipos}/edit2',  [equiposController::class, 'edit2'])    ->name('equipos.edit2');
 Route::put('equipos/{equipos}',        [equiposController::class, 'update'])  ->name('equipos.update');

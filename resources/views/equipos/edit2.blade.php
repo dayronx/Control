@@ -1,9 +1,12 @@
 
 @extends('adminlte::page')
 
-@section('title', 'Agregar Equipo')
+@section('title', 'vista')
 @section('content_header')
-   
+
+
+<a href="{{route('equipos.reporte')}}" ><button   type="button" class="btn btn-outline-dark" style="float: right;">Crear nuevo Reporte</button></a>
+
 @stop
 
 @section('content')
@@ -50,28 +53,42 @@
                 </div>
 
                 <div class="row mb-3">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label >Marca</label>
                         <input type="text" name="marca" class="form-control" id="direccion " value="{{old('marca',$equipos->marca)}}" disabled readonly>
                         
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="telefono" class="form-label">Cantidad</label>
                         <input type="number" name="cantidad" class="form-control" id="telefono"  value="{{old('cantidad',$equipos->cantidad)}}" disabled readonly>
                        
                     </div>
+                    <div class="col-md-4">
+                        <label for="telefono" class="form-label">Prioridad</label>
+                        <input type="number" name="prioridad" class="form-control" id="telefono"  value="{{old('prioridad',$equipos->prioridad)}}" disabled readonly>
+                       
+                    </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="direccion" class="form-label">Tipo</label>
                 
                         <input type="text" name="tipo" id="direccion" class="form-control" value="{{old('tipo',$equipos->tipo)}}" disabled readonly>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="telefono" class="form-label">Ubicacion</label>
                       
                         <input type="text" name="ubicacion" id="telefono" class="form-control" value="{{old('ubicacion',$equipos->ubicacion)}}" disabled readonly>
                     </div>
+                    <div class="col-md-4">
+                        <label for="telefono" class="form-label">Estado actual de la Maquina</label>
+                      
+                        <input type="text" name="estado" id="telefono" class="form-control" value="{{old('estado',$equipos->estado)}}" disabled readonly>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Descripcion de la Maquina:</label>
+                    <input type="text" name="estado" id="telefono" class="form-control" value="{{old('descripcion',$equipos->descripcion)}}" disabled readonly>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6">
@@ -100,6 +117,7 @@
  <br/>
  <br/>
  <br/>
+
 
 <div class="container mt-4">
         <div class="row">
