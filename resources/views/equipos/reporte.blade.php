@@ -80,6 +80,13 @@
                         <br/>
                         <br/> 
                         <br/> 
+
+
+                        <div class="mb-3">
+                            <label  class="form-label">Nombre</label>
+                            <input type="text" name="nombre" class="form-control" id="email" value="{{old('nombre',$equipos->nombre)}}" disabled readonly>
+                           
+                        </div>
     
                         <div class="mb-3">
                         

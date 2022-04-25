@@ -15,7 +15,7 @@ class equiposController extends Controller
 
     public function index(Request $request){
         $equipos=DB::table('equipos')
-        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'estadoFinal','prioridad','PDF','id')
+        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'prioridad','PDF','id')
         ->where('tipo', '=', 'frio' )
         ->orderBy('nombre', 'asc')
         ->paginate(10);
@@ -43,7 +43,7 @@ class equiposController extends Controller
         $arch2 = $request->file('PDF')->store('public/pdf');
         $pdf = Storage::url($arch2);
 
-        Equipos::create($request->only('nombre', 'marca', 'cantidad','tipo','ubicacion','estado', 'estadoFinal','descripcion', 'prioridad')+[
+        Equipos::create($request->only('nombre', 'marca', 'cantidad','tipo','ubicacion','estado', 'Mantenimiento','descripcion', 'prioridad')+[
             'foto' => $file,
             'PDF' => $pdf
 
@@ -69,7 +69,7 @@ class equiposController extends Controller
     }
     public function update(Request $request, Equipos $equipos){
         
-        $update= $request-> only('nombre', 'marca', 'cantidad','tipo', 'descripcion', 'cambioDePiezas', 'Mantenimiento', 'estado', 'estadoFinal','prioridad');
+        $update= $request-> only('nombre', 'marca', 'cantidad','tipo', 'descripcion', 'cambioDePiezas', 'Mantenimiento', 'estado','prioridad');
 
         $equipos->update($update);
 
@@ -105,7 +105,7 @@ class equiposController extends Controller
     public function calor(Request $request){
 
         $equipos=DB::table('equipos')
-        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'estadoFinal','prioridad','PDF','id')
+        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado','prioridad','PDF','id')
                    ->where('tipo', '=', 'calor' )
                    ->orderBy('nombre', 'asc')
                    ->paginate(10);

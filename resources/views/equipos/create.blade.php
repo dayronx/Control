@@ -33,27 +33,55 @@
                     @csrf
 
                     <div class="mb-3">
-                        
+                        <label class="form-label">Nombre de la Maquina:</label>
                         <input type="text" class="form-control" id="email" placeholder="Nombre de la Maquina" name="nombre">
                     </div> 
                     <div class="row mb-3">
-                        <div class="col-md-4">
-                            
+                        <div class="col-md-8">
+                            <label class="form-label">Marca:</label>
                             <input type="text" class="form-control" id="nombre" placeholder="Marca" name="marca">
 
                         </div>
                         <div class="col-md-4">
-                          
+                            <label class="form-label">Cantidad:</label>
                             <input type="number" placeholder="Cantidad" class="form-control" name="cantidad" id="apellido">
 
                         </div>
+                   
+
+                    </div> 
+                    <div class="row mb-3">
                         <div class="col-md-4">
-                        
+
+                            <label class="form-label">Tipo de Mantenimiento que Requiere:</label>
+                            <select class="form-select" aria-label="Default select example"  name="Mantenimiento">
+                                <option value="Preventivo">Preventivo</option>
+                                <option value="Correctivo">Correctivo</option>
+                              
+                            </select>
+                            
+                        </div>
+                        <div class="col-md-6">
+
+                            <label class="form-label">Estado:</label>
+                            <br/>
+                            <br>
+                            <select class="form-select" aria-label="Default select example"  name="estado">
+                                <option value="Bueno">Bueno</option>
+                                <option value="Malo">Malo</option>
+                                <option value="En Reparacion">En Reparacion </option>
+                            </select>
+                            
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Prioridad:</label>
+                            <br/>
+                            <br/>
                             <input type="number" placeholder="Prioridad" class="form-control" name="prioridad" id="apellido">
 
                         </div>
 
-                    </div>  
+                    </div>     
                     <div class="row mb-3">
                         <div class="col-md-4">
                           
@@ -63,7 +91,7 @@
                                 <option value="frio">Maquina de Frio</option>
                             </select>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <label for="email" class="form-label">Ubicacion: </label>
                             <select class="form-select" aria-label="Default select example"  name="ubicacion">
                                 <option value="Ambiente de Cocina">Ambiente de Cocina</option>
@@ -79,16 +107,7 @@
                                 <option value="Taller de Produccion">Taller de Produccion </option>
                             </select>
                          </div>
-                         <div class="col-md-2">
-
-                            <label class="form-label">Estado:</label>
-                            <select class="form-select" aria-label="Default select example"  name="estado">
-                                <option value="Bueno">Bueno</option>
-                                <option value="Malo">Malo</option>
-                                <option value="En Reparacion">En Reparacion </option>
-                            </select>
-                            
-                        </div>
+                   
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Descripcion de la Maquina:</label>

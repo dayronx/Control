@@ -288,15 +288,7 @@ return [
           
             
         ],
-        [
-            'text'    => ' Reporte de Mantenimiento',
-            'icon'    => 'fas fa-fw fa-share',
-            'icon_color' => 'red',
-            'route'    => 'equipos.reporte'
-
-          
-            
-        ],
+     
      
         ['header' => 'UBICACION'],
       

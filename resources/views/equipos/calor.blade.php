@@ -19,7 +19,7 @@
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
-                <thead class="text-primary">
+                <thead class="text-dark">
                   <th>Nombre</th>
                   <th>Marca</th>
                   <th>Cantidad</th>

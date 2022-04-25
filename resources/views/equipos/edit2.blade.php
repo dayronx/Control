@@ -47,43 +47,46 @@
 
 
                 <div class="mb-3">
-                    <label  class="form-label">Nombre</label>
+                    <label  class="form-label">Nombre:</label>
                     <input type="text" name="nombre" class="form-control" id="email" value="{{old('nombre',$equipos->nombre)}}" disabled readonly>
                    
                 </div>
 
                 <div class="row mb-3">
                     <div class="col-md-4">
-                        <label >Marca</label>
+                        <label >Marca:</label>
                         <input type="text" name="marca" class="form-control" id="direccion " value="{{old('marca',$equipos->marca)}}" disabled readonly>
                         
                     </div>
                     <div class="col-md-4">
-                        <label for="telefono" class="form-label">Cantidad</label>
+                        <label for="telefono" class="form-label">Cantidad:</label>
                         <input type="number" name="cantidad" class="form-control" id="telefono"  value="{{old('cantidad',$equipos->cantidad)}}" disabled readonly>
                        
                     </div>
                     <div class="col-md-4">
-                        <label for="telefono" class="form-label">Prioridad</label>
+                        <label for="telefono" class="form-label">Prioridad:</label>
                         <input type="number" name="prioridad" class="form-control" id="telefono"  value="{{old('prioridad',$equipos->prioridad)}}" disabled readonly>
                        
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-4">
-                        <label for="direccion" class="form-label">Tipo</label>
-                
+                        <label for="direccion" class="form-label">Tipo:</label>
+                        <br/>
+                        <br/>
                         <input type="text" name="tipo" id="direccion" class="form-control" value="{{old('tipo',$equipos->tipo)}}" disabled readonly>
                     </div>
                     <div class="col-md-4">
-                        <label for="telefono" class="form-label">Ubicacion</label>
-                      
+                        <label for="telefono" class="form-label">Ubicacion:</label>
+                        <br/>
+                        <br/>
                         <input type="text" name="ubicacion" id="telefono" class="form-control" value="{{old('ubicacion',$equipos->ubicacion)}}" disabled readonly>
                     </div>
                     <div class="col-md-4">
-                        <label for="telefono" class="form-label">Estado actual de la Maquina</label>
-                      
-                        <input type="text" name="estado" id="telefono" class="form-control" value="{{old('estado',$equipos->estado)}}" disabled readonly>
+
+                        <label class="form-label">Tipo de Mantenimiento que Requiere:</label>
+                        <input type="text" name="tipo" id="direccion" class="form-control" value="{{old('tipo',$equipos->Mantenimiento)}}" disabled readonly>
+                        
                     </div>
                 </div>
                 <div class="mb-3">
@@ -107,7 +110,7 @@
                         <a target="_blank" href="{{asset($equipos->PDF)}}"><img height="100" width="80" src="{{asset('img/pdf.png')}}" alt=""></a>
                     </div>
                 </div>
-             
+                <hr>
 
             </form>
 
@@ -115,20 +118,70 @@
     </div>
 </div>
 
+<br/>
+<br/>
+<br/>
+<br/>
 
 
 
-                   
-                </form>
+
+<div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary" style="text-align: center">
+            <h4 class="card-title" style="text-align: center"    >Historial de Mantenimiento</h4>
+            
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-dark">
+                    <th>Nombre</th>
+                    <th>mantenimiento</th>
+                    <th>malo</th>
+                    <th>Tecnico</th>
+                    <th>fecha</th>
+                   <th>Ficha tecnica</th>
+                   <th>pdf</th>
+                </thead>
+                <tbody>
+                  @foreach ($equipos as $equipo )
+                  <tr style="text-align: center">
+                    <td>maquina</td>
+                    <td>tipos</td>
+                    <td>estado</td>
+                    <td>tecnico</td>
+                    <td>fecha</td>
+                    <td>ficha</td>
+                    <td>pdf</td>
+                 
+                  </tr>
+                   @endforeach
+                
+                </tbody>
+              </table>
             </div>
+          </div>
+          <div class="card-footer mr-auto">
+            
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+<hr>
+
+
+
+
 
 </body>
 
 </html>
 
- </form>
+
   
   
   
