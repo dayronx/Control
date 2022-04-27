@@ -27,7 +27,7 @@
                 <div class="col-md-8 offset-md-2">
                     <h3>Reporte de Mantenimiento</h3>
                     <hr>
-                    <form id="form">
+                    <form id="form" action="{{route('equipos.reporte')}}" method="POST" enctype="multipart/form-data">
                         <br/>
                         <div class="mb-3"  style="text-align: center">
                            

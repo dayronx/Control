@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Equipos;
+use App\Models\informes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -31,8 +32,13 @@ class equiposController extends Controller
     public function create(){
         return view('equipos.create');
     }
-    public function reporte(Equipos $equipos){
-        return view ('equipos.reporte' , compact('equipos'));
+    public function reporte(informes $informes){
+        
+        informes::create($informes->only('nombre','apellido','telefono','entidad','correo')
+           
+
+        );
+        return view ('equipos.reporte' , compact('informes'));
     }
 
     public function store(Request $request){

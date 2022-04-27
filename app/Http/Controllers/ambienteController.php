@@ -10,7 +10,7 @@ class ambienteController extends Controller
 {
     public function cocina(Request $request){
         $equipos=DB::table('equipos')
-        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'estadoFinal','prioridad','PDF','id')
+        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'prioridad','PDF','id')
         ->where('ubicacion', '=', 'Ambiente de Cocina' )
         ->orderBy('nombre', 'asc')
         ->paginate(10);
@@ -21,7 +21,7 @@ class ambienteController extends Controller
     }
     public function bio(Request $request){
         $equipos=DB::table('equipos')
-                   ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'estadoFinal','prioridad','PDF','id')
+                   ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'prioridad','PDF','id')
                    ->where('ubicacion', '=', 'Biotecnologia Vegetal' )
                    ->orderBy('nombre', 'asc')
                    ->paginate(10);
@@ -32,7 +32,7 @@ class ambienteController extends Controller
     }
     public function carnicos(Request $request){
         $equipos=DB::table('equipos')
-        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'estadoFinal','prioridad','PDF','id')
+        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado','prioridad','PDF','id')
         ->where('ubicacion', '=', 'Carnicos' )
         ->orderBy('nombre', 'asc')
         ->paginate(10);
@@ -43,7 +43,7 @@ class ambienteController extends Controller
     }
     public function cafe(Request $request){
         $equipos=DB::table('equipos')
-        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'estadoFinal','prioridad','PDF','id')
+        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'prioridad','PDF','id')
         ->where('ubicacion', '=', 'Laboratorio de Cafe' )
         ->orderBy('nombre', 'asc')
         ->paginate(10);
@@ -55,7 +55,7 @@ class ambienteController extends Controller
  
     public function quimica(Request $request){
         $equipos=DB::table('equipos')
-                   ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'estadoFinal','prioridad','PDF','id')
+                   ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'prioridad','PDF','id')
                    ->where('ubicacion', '=', 'Laboratorio de Quimica' )
                    ->orderBy('nombre', 'asc')
                    ->paginate(10);
@@ -66,7 +66,7 @@ class ambienteController extends Controller
     }
     public function micro(Request $request){
         $equipos=DB::table('equipos')
-        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'estadoFinal','prioridad','PDF','id')
+        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado','prioridad','PDF','id')
         ->where('ubicacion', '=', 'Laboratorio de Microorganismos' )
         ->orderBy('nombre', 'asc')
         ->paginate(10);
@@ -77,7 +77,7 @@ class ambienteController extends Controller
     }
     public function restaurante(Request $request){
         $equipos=DB::table('equipos')
-        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'estadoFinal','prioridad','PDF','id')
+        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado','prioridad','PDF','id')
         ->where('ubicacion', '=', 'Restaurante de los Aprendices' )
         ->orderBy('nombre', 'asc')
         ->paginate(10);
@@ -88,7 +88,7 @@ class ambienteController extends Controller
     }
     public function fruver(Request $request){
         $equipos=DB::table('equipos')
-                   ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'estadoFinal','prioridad','PDF','id')
+                   ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado','prioridad','PDF','id')
                    ->where('ubicacion', '=', 'Taller Fruver' )
                    ->orderBy('nombre', 'asc')
                    ->paginate(10);
@@ -99,7 +99,7 @@ class ambienteController extends Controller
     }
     public function lacteos(Request $request){
         $equipos=DB::table('equipos')
-                   ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'estadoFinal','prioridad','PDF','id')
+                   ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'prioridad','PDF','id')
                    ->where('ubicacion', '=', 'Taller Lacteos' )
                    ->orderBy('nombre', 'asc')
                    ->paginate(10);
@@ -110,7 +110,7 @@ class ambienteController extends Controller
     }
     public function panificacion(Request $request){
         $equipos=DB::table('equipos')
-        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'estadoFinal','prioridad','PDF','id')
+        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'prioridad','PDF','id')
         ->where('ubicacion', '=', 'Taller de Panificacion' )
         ->orderBy('nombre', 'asc')
         ->paginate(10);
@@ -121,7 +121,7 @@ class ambienteController extends Controller
     }
     public function produccion(Request $request){
         $equipos=DB::table('equipos')
-        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'estadoFinal','prioridad','PDF','id')
+        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'prioridad','PDF','id')
                    ->where('ubicacion', '=', 'Taller de Produccion' )
                    ->orderBy('nombre', 'asc')
                    ->paginate(10);

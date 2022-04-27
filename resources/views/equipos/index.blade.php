@@ -28,7 +28,7 @@
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table">
-                      <thead class="text">
+                      <thead class="text-dark">
                         <tr style="text-align: center">
                           <th>Nombre</th>
                           <th>Marca</th>
