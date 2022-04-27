@@ -16,7 +16,7 @@ class equiposController extends Controller
 
     public function index(Request $request){
         $equipos=DB::table('equipos')
-        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'prioridad','PDF','id')
+        ->select('nombre', 'marca', 'cantidad','tipo', 'estado','ubicacion', 'prioridad','PDF','id')
         ->where('tipo', '=', 'frio' )
         ->orderBy('nombre', 'asc')
         ->paginate(10);

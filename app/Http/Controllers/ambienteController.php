@@ -121,7 +121,7 @@ class ambienteController extends Controller
     }
     public function produccion(Request $request){
         $equipos=DB::table('equipos')
-        ->select('nombre', 'marca', 'cantidad','tipo', 'ubicacion','estado', 'prioridad','PDF','id')
+        ->select('nombre', 'marca', 'cantidad','tipo', 'estado', 'prioridad','ubicacion','PDF','id')
                    ->where('ubicacion', '=', 'Taller de Produccion' )
                    ->orderBy('nombre', 'asc')
                    ->paginate(10);
