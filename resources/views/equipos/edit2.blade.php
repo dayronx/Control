@@ -111,6 +111,58 @@
                     </div>
                 </div>
                 <hr>
+                ********
+                
+
+
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-primary" style="text-align: center">
+          <h4 class="card-title" style="text-align: center"    >Historial de Mantenimiento</h4>
+          
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="text-dark">
+                  <th>Nombre</th>
+                  <th>mantenimiento</th>
+                  <th>malo</th>
+                  <th>Tecnico</th>
+                  <th>fecha</th>
+                 <th>Ficha tecnica</th>
+                 <th>pdf</th>
+              </thead>
+              <tbody>
+                @foreach ($equipos as $equipo )
+                <tr style="text-align: center">
+                  <td>maquina</td>
+                  <td>tipos</td>
+                  <td>estado</td>
+                  <td>tecnico</td>
+                  <td>fecha</td>
+                  <td>ficha</td>
+                  <td>pdf</td>
+               
+                </tr>
+                 @endforeach
+              
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer mr-auto">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+                *********
 
             </form>
 
@@ -123,55 +175,6 @@
 <br/>
 <br/>
 
-
-
-
-<div class="col-md-12">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header card-header-primary" style="text-align: center">
-            <h4 class="card-title" style="text-align: center"    >Historial de Mantenimiento</h4>
-            
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table">
-                <thead class="text-dark">
-                    <th>Nombre</th>
-                    <th>mantenimiento</th>
-                    <th>malo</th>
-                    <th>Tecnico</th>
-                    <th>fecha</th>
-                   <th>Ficha tecnica</th>
-                   <th>pdf</th>
-                </thead>
-                <tbody>
-                  @foreach ($equipos as $equipo )
-                  <tr style="text-align: center">
-                    <td>maquina</td>
-                    <td>tipos</td>
-                    <td>estado</td>
-                    <td>tecnico</td>
-                    <td>fecha</td>
-                    <td>ficha</td>
-                    <td>pdf</td>
-                 
-                  </tr>
-                   @endforeach
-                
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="card-footer mr-auto">
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<hr>
 
 
 

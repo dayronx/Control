@@ -6,6 +6,7 @@ use Illuminate\Controllers\ControlController;
 use Illuminate\Support\Facades\Route;
 use app\http\Controllers\HomeController;
 use App\Http\Controllers\perfilController;
+use App\Http\Controllers\registrosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,7 @@ Route::get('equipos',                  [equiposController::class, 'index'])   ->
 Route::get('equipos/create',           [equiposController::class, 'create'])  ->name('equipos.create');
 Route::post('equipos',                 [equiposController::class, 'store'])   ->name('equipos.store');
 Route::get('equipos/calor',            [equiposController::class, 'calor'])   ->name('equipos.calor');
-Route::get('equipos/reporte',          [equiposController::class, 'reporte']) ->name('equipos.reporte');
+  
 Route::get('equipos/{equipos}/edit',   [equiposController::class, 'edit'])    ->name('equipos.edit');
 Route::get('equipos/{equipos}/edit2',  [equiposController::class, 'edit2'])    ->name('equipos.edit2');
 Route::put('equipos/{equipos}',        [equiposController::class, 'update'])  ->name('equipos.update');
@@ -40,7 +41,7 @@ Route::delete('equipos/{equipos}',     [equiposController::class, 'destroy']) ->
 Route::get('perfil',         [perfilController::class,  'index'])   ->name('perfil.index');
 Route::get('perfil/create',  [perfilController::class,  'create'])  ->name('perfil.create');
 
-
+Route::get('equipos/reporte', [registrosController::class, 'reporte'])->name('equipos.reporte');
 
 
 /*AMBIENTE*/

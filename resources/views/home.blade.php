@@ -2,46 +2,57 @@
 
 @section('title', 'Control')
 
-@section('plugins.Sweetalert2 ', true)
+@section('content_header')
 
 
 
 @section('content')
 
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"  href="dashboard.css">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+       
+    </head>
+<body>
+  
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="imagenes/img0.png" class="d-block w-100" alt="...">
+      <div class="carousel-item active" >
+        <img src="imagenes/img0.png"  height="600px" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="imagenes/img1.jpg" class="d-block w-100" alt="...">
+        <img src="imagenes/img1.jpg"  height="600px"  class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="imagenes/img2.jpg" class="d-block w-100" alt="...">
+        <img src="imagenes/img2.jpg" height="600px"  class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="imagenes/img3.jpg" class="d-block w-100" alt="...">
+        <img src="imagenes/img3.jpg" height="600px"  class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="imagenes/img4.jpg" class="d-block w-100" alt="...">
+        <img src="imagenes/img4.jpg" height="600px"  class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="imagenes/img5.jpg" class="d-block w-100" alt="...">
+        <img src="imagenes/img5.jpg" height="600px"  class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="imagenes/img6.jpg" class="d-block w-100" alt="...">
+        <img src="imagenes/img6.jpg" height="600px"  class="d-block w-100" alt="...">
       </div>
   
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden"></span>
-    </button>
+
   </div>
+
+
+</body>
+</html>
 @stop
 
 @section('css')
@@ -51,11 +62,5 @@
 
 @section('js')
     
-    <script>
-      Swal.fire(
-        'formulario guardado!',
-        'de click en el siguiente boton',
-        'success'
-      )
-    </script>
+  
 @stop

@@ -25,9 +25,12 @@
         <div class="container mt-4">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <h3>Reporte de Mantenimiento</h3>
-                    <hr>
-                    <form id="form" action="{{route('equipos.reporte')}}" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3"  style="align-content: center">
+                        <h3  style="align-content: center">Reporte de Mantenimiento</h3>
+                    </div>
+                    <form action="{{route('equipos.reporte')}}" method="get" enctype="multipart/form-data">
+                        @csrf
+            
                         <br/>
                         <div class="mb-3"  style="text-align: center">
                            
@@ -38,7 +41,7 @@
                         <br/>
                         <br/> 
                         <br/> 
-
+            
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="nombre" class="form-label">Nombres</label>
@@ -49,12 +52,12 @@
                                 <input type="text" class="form-control" id="apellido">
                             </div>
                         </div>
-    
+            
                         <div class="mb-3">
                             <label for="email" class="form-label">Correo electronico</label>
                             <input type="email" class="form-control" id="email">
                         </div>
-    
+            
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="direccion" class="form-label">Entidad  a la que pertenece</label>
@@ -80,14 +83,9 @@
                         <br/>
                         <br/> 
                         <br/> 
-
-
-                        <div class="mb-3">
-                            <label  class="form-label">Nombre</label>
-                            <input type="text" name="nombre" class="form-control" id="email" value="{{old('nombre',$equipos->nombre)}}" disabled readonly>
-                           
-                        </div>
-    
+            
+            
+            
                         <div class="mb-3">
                         
                             <input type="text" class="form-control" id="email" placeholder="Nombre de la Maquina" name="nombre">
@@ -96,19 +94,19 @@
                             <div class="col-md-4">
                                 
                                 <input type="text" class="form-control" id="nombre" placeholder="Marca" name="marca">
-    
+            
                             </div>
                             <div class="col-md-4">
                               
                                 <input type="number" placeholder="Cantidad" class="form-control" name="cantidad" id="apellido">
-    
+            
                             </div>
                             <div class="col-md-4">
                             
                                 <input type="number" placeholder="Prioridad" class="form-control" name="prioridad" id="apellido">
-    
+            
                             </div>
-    
+            
                         </div>  
                         <div class="row mb-3">
                             <div class="col-md-4">
@@ -144,7 +142,7 @@
                              </div>
                             
                         </div>
-
+            
                          
                         <div class="row mb-3">
                             
@@ -181,59 +179,46 @@
                                     
                                  <input type="file" name="foto">
                                 
-    
+            
                             </div>
                             
                         
                         </div>
                         <div class="row mb-3">
-
-                            <div class="col-md-8">
+            
+                            <div class="col-md-12">
                             <div>
                                 <label for="numeroHijos" class="form-label">¿que piezas se cambiaron?</label>
-                                <input type="text" class="form-control" id="discapacidad-desc">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <label > Ficha tecnica:</label>
-                            <br/>
-                           <a target="_blank" href="{{asset($equipos->PDF)}}"><img height="100" width="80" src="{{asset('img/pdf.png')}}" alt=""></a> 
-                            
-                        </div>
-
+            
+            
                         </div>
                         
                         <div class="col-md-12"> 
                             <label for="email" class="form-label">Descripcion del Mantenimiento</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
                         </div>
                    
                       
-    
+            
                        
                             
                       
                   
-                    
-    
-    
-                      
-    
-                        <span class="d-block pb-2">Firma digital aqui</span>
-                        <div class="signature mb-2" style="width: 100%; height: 200px;">
-                            <canvas id="signature-canvas"
-                                style="border: 1px dashed red; width: 100%; height: 200px;"></canvas>
+            
+                        <div class="d-flex justify-content-end col-12">
+                            <button type="submit"  class= "btn btn-secondary" >GUARDAR </button>
                         </div>
-    
-                        <button type="submit" class="btn btn-primary mb-4">Generar PDF</button>
                     </form>
                 </div>
             </div>
-        </div>
-    
+        </div>           
+      
     </body>
     
-    </html>
+ 
 
 </html>
 

@@ -32,14 +32,7 @@ class equiposController extends Controller
     public function create(){
         return view('equipos.create');
     }
-    public function reporte(informes $informes){
-        
-        informes::create($informes->only('nombre','apellido','telefono','entidad','correo')
-           
-
-        );
-        return view ('equipos.reporte' , compact('informes'));
-    }
+ 
 
     public function store(Request $request){
 
