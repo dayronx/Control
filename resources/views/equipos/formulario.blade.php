@@ -82,7 +82,7 @@
 
                     <div class="mb-3">
                     
-                        <input type="text" class="form-control" id="email" placeholder="Nombre de la Maquina" name="nombre">
+                        <input type="text" class="form-control" id="email" placeholder="Nombre de la Maquina" name="nombreMaquina">
                     </div> 
                     <div class="row mb-3">
                         <div class="col-md-4">

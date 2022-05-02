@@ -8,4 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 class Registro extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nombreMaquina', 
+        'marca', 
+        'tipoMaquina',
+        'tipoMantenimiento',
+        'estadoFinal',
+        'fotoCambio', 
+        'cambioPiezas',
+        'PiezaCambiada', 
+        'descripcionMantenimiento',
+        'imagen',
+        'nombre',
+        'apellido',
+        'telefono', 
+        'correo',
+        'entidad'
+
+    ];
 }

@@ -41,7 +41,7 @@ Route::delete('equipos/{equipos}',     [equiposController::class, 'destroy']) ->
 Route::get('perfil',         [perfilController::class,  'index'])   ->name('perfil.index');
 Route::get('perfil/create',  [perfilController::class,  'create'])  ->name('perfil.create');
 
-Route::get('equipos/reporte', [registrosController::class, 'reporte'])->name('equipos.reporte');
+Route::get('equipos/reporte',  [registrosController::class, 'reporte'])->name('equipos.reporte');
 
 
 /*AMBIENTE*/

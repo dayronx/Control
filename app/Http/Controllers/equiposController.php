@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Equipos;
+use App\Models\Registro;
 use App\Models\informes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -55,6 +56,18 @@ class equiposController extends Controller
 
     }
 
+    public function reporte(Request $request){
+      
+
+        Registro::create($request->only('nombreMaquina', 'marca', 'tipoMaquina','tipoMantenimiento','estadoFinal','fotoCambio', 'cambioPiezas','PiezaCambiada', 'descripcionMantenimiento', 'imagen', 'nombre', 'apellido', 'telefono', 'correo', 'entidad')
+
+        );
+
+       
+
+
+        return redirect()->route('equipos.reporte');
+    }
     public function edit(Equipos $equipos){
         
         return view('equipos.edit', compact('equipos'));
