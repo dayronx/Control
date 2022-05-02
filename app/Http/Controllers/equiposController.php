@@ -34,7 +34,7 @@ class equiposController extends Controller
         return view('equipos.create');
     }
  
-
+   
     public function store(Request $request){
 
         $arch = $request->file('foto')->store('public/images');

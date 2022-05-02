@@ -42,6 +42,7 @@ Route::get('perfil',         [perfilController::class,  'index'])   ->name('perf
 Route::get('perfil/create',  [perfilController::class,  'create'])  ->name('perfil.create');
 
 Route::get('equipos/reporte',  [registrosController::class, 'reporte'])->name('equipos.reporte');
+Route::post('equipos/reporte', [registrosController::class, 'store2']) ->name('equipos.store2');
 
 
 /*AMBIENTE*/

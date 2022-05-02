@@ -17,14 +17,15 @@ class Registro extends Model
         'estadoFinal',
         'fotoCambio', 
         'cambioPiezas',
-        'PiezaCambiada', 
+        'piezaCambiada', 
         'descripcionMantenimiento',
         'imagen',
         'nombre',
         'apellido',
         'telefono', 
         'correo',
-        'entidad'
+        'entidad',
+        'ubicacion'
 
     ];
 }

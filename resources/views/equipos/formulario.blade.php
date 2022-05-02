@@ -20,7 +20,7 @@
                 </div>
                 
                 <hr>
-                <form id="form" action="{{route('equipos.reporte')}}" method="POST" enctype="multipart/form-data">
+                <form id="form" method="POST" enctype="multipart/form-data">
       
                   @csrf
 
