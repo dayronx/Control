@@ -25,9 +25,20 @@
         <div class="container mt-4">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <div class="mb-3"  style="align-content: center">
-                        <h3  style="align-content: center">Reporte de Mantenimiento</h3>
-                    </div>
+                    <br/>
+                  
+                    <div  class="row mb-3">
+                        <div class="col-md-12" style="align-content: center">
+                            <h3  style="align-content: center">Reporte de Mantenimiento</h3>
+                        </div>
+                  
+                      
+                   </div> 
+                  
+                   <hr> 
+                
+                   <br/>
+                   <br/> 
                     <form action="{{route('equipos.store2')}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
@@ -36,6 +47,7 @@
                            
                             
                             <h5 style="align-content: center">Informacion del profesional</h5>
+                            <hr>
                           
                         </div>
                         <br/>
@@ -193,15 +205,22 @@
                         </div>
                     
                         <div class="col-md-12"> 
+                            <div>
                               <label for="email" class="form-label">Descripcion del Mantenimiento</label>
                                <textarea class="form-control" name="descripcionMantenimiento" rows="4"></textarea>
                           </div>
     
                         </div>    
-            
+                        <br/>
+                        <br/>
+                        <br/>
                         <div class="d-flex justify-content-end col-12">
-                            <button type="submit"  class= "btn btn-primary" >GUARDAR </button>
-                        </div>
+                            <button type="submit"  class= "btn btn-outline-dark  " >GUARDAR </button>
+                       </div>
+                       <br/>
+                       <br/>
+                       <hr>
+                       <br/>
                     </form>
                 </div>
             </div>
