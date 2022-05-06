@@ -126,5 +126,8 @@ class equiposController extends Controller
        
                return view('equipos.calor', compact('equipos'));
     }
+    public function  alerta(){
+        return view('equipos.alerta');
+    }
 
 }

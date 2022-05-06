@@ -242,11 +242,10 @@ return [
       
         [
             'text'        => 'Alertas',
-            'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-bell',
             'icon_color' => 'yellow',
-            'label'       => 4,
             'label_color' => 'success',
+            'route'    => 'equipos.alerta'
         ],
         ['header' => 'account_settings'],
         [
