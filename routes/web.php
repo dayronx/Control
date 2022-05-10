@@ -31,17 +31,20 @@ Route::get('equipos',                  [equiposController::class, 'index'])   ->
 Route::get('equipos/create',           [equiposController::class, 'create'])  ->name('equipos.create');
 Route::post('equipos',                 [equiposController::class, 'store'])   ->name('equipos.store');
 Route::get('equipos/calor',            [equiposController::class, 'calor'])   ->name('equipos.calor');
-Route::get('equipos/alerta',            [equiposController::class, 'alerta'])   ->name('equipos.alerta');
-  
+Route::get('equipos/alerta',            [equiposController::class, 'alerta'])   ->name('equipos.alerta'); 
 Route::get('equipos/{equipos}/edit',   [equiposController::class, 'edit'])    ->name('equipos.edit');
 Route::get('equipos/{equipos}/edit2',  [equiposController::class, 'edit2'])    ->name('equipos.edit2');
 Route::put('equipos/{equipos}',        [equiposController::class, 'update'])  ->name('equipos.update');
 Route::delete('equipos/{equipos}',     [equiposController::class, 'destroy']) ->name('equipos.destroy');
 
 
-Route::get('perfil',         [perfilController::class,  'index'])   ->name('perfil.index');
-Route::get('perfil/create',  [perfilController::class,  'create'])  ->name('perfil.create');
-Route::get('perfil/index',   [perfilController::class,   'store'])   ->name('perfil.store');
+Route::get('perfil/index',          [perfilController::class, 'index'])   ->name('perfil.index');
+Route::get('perfil/create',         [perfilController::class, 'create'])  ->name('perfil.create');
+Route::post('perfil/store',                [perfilController::class, 'store'])   ->name('perfil.store');
+Route::get('perfil/{users}/edit',  [perfilController::class, 'edit'])    ->name('perfil.edit');
+Route::put('perfil/{perfil}',       [perfilController::class, 'update'])  ->name('perfil.update');
+Route::delete('delete/{id}',        [perfilController::class, 'delete'])->name('perfil.delete');
+
 
 Route::get('equipos/reporte',  [registrosController::class, 'reporte'])->name('equipos.reporte');
 Route::post('equipos/reporte', [registrosController::class, 'store2']) ->name('equipos.store2');

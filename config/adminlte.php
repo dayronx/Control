@@ -250,8 +250,9 @@ return [
         ['header' => 'account_settings'],
         [
             'text' => 'Agregar Perfiles',
-            'route'    => 'perfil.create',
-            'icon' => 'fas fa-fw fa-user',
+            'route'    => 'perfil.index',
+            'icon_color' => 'blue',
+            'icon' => 'fas fa-fw fa-users',
         ],
         [
             'text' => 'change_password',

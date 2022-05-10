@@ -16,41 +16,38 @@
         <script src="app2.js"></script>
     </head>
     <body>
+      @csrf
         <div class="container mt-4">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                    
-    <form>
-      <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Nombres</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div  class="form-text"></div>
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Apellidos</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text"></div>
-        </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">correo Electronico</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text"></div>
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-      </div>
-  
-      <button type="submit" class="btn btn-primary">Guardar</button>
-    </form>
+                  <form action="{{route('perfil.store')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="mb-3">
+                      <label class="form-label">Nombres</label>
+                      <input type="text" class="form-control" id="email" placeholder="Nombres" name="name">
+                    </div> 
+                   
+                    <div class="mb-3">
+                       <label class="form-label">Correo</label>
+                       <input type="text" class="form-control" id="email" placeholder="Correo electronico" name="email">
+                    </div> 
+                    <div class="mb-3">
+                      <label class="form-label">Contraseña</label>
+                      <input type="password" class="form-control" id="email" placeholder="Correo electronico" name="password">
+                   </div> 
+                    <div class="d-flex justify-content-end col-12">
+                      <button type="submit"  class="btn btn-outline-dark"  >GUARDAR FORMULARIO</button>
+                    </div>
+                  </form>
                  
-                </div>
+                </div> 
             </div>
         </div>
     
     </body>
     
-    </html>
+
 
 </html>
 
