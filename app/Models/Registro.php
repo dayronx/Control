@@ -10,7 +10,7 @@ class Registro extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nombreMaquina', 
+        'equipos_id', 
         'marca', 
         'tipoMaquina',
         'tipoMantenimiento',
@@ -28,4 +28,10 @@ class Registro extends Model
         'ubicacion'
 
     ];
+
+
+    public function equipos(){
+        return $this->belongsTo('App\Models\Equipos','equipos_id', 'id');
+    }
+
 }

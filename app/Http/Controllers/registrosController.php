@@ -16,10 +16,14 @@ class registrosController extends Controller
 
     public function store2(Request $request){
 
-        Registro::create($request->only('nombreMaquina', 'marca', 'ubicacion','tipoMaquina','tipoMantenimiento','estadoFinal','fotoCambio', 'cambioPiezas','piezaCambiada', 'descripcionMantenimiento', 'imagen', 'nombre', 'apellido', 'telefono', 'correo', 'entidad'));
+        Registro::create($request->only('equipos_id', 'marca', 'ubicacion','tipoMaquina','tipoMantenimiento','estadoFinal','fotoCambio', 'cambioPiezas','piezaCambiada', 'descripcionMantenimiento', 'imagen', 'nombre', 'apellido', 'telefono', 'correo', 'entidad'));
 
         return redirect()->route('equipos.reporte');
     }
+
+
+
+
 
     public function calor(Request $request){
 

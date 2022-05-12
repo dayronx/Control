@@ -6,6 +6,7 @@ use App\Models\Perfil;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class perfilController extends Controller
 {
@@ -23,7 +24,7 @@ class perfilController extends Controller
        
 
 
-        return redirect()->route('perfil.create');
+        return redirect()->route('perfil.index');
     }
 
     public function  create(){
@@ -36,6 +37,18 @@ class perfilController extends Controller
         return redirect()->route('perfil.index');
 
     }
+    public function editform($id){
+        $usuario = User::findOrFail($id);
+
+        return view('perfil.edit', compact('usuario'));
+    }
+    public function edit(Request $request, $id){
+        $datos = request()->except((['_token', '_method']));
+        User::where('id', '=', $id)->update($datos);
+
+        return view('perfil.index');
+    }
+
 }   
   
 

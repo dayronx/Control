@@ -23,8 +23,6 @@ return new class extends Migration
             $table->unsignedBigInteger('equipos_id')->nullable();
             $table->foreign('equipos_id')->references('id')->on('equipos')->nullOnDelete();
 
-
-            $table->string('nombreMaquina');
             $table->string('marca');
             $table->string('tipoMaquina');
             $table->string('tipoMantenimiento');

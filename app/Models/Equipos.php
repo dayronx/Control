@@ -25,6 +25,10 @@ class Equipos extends Model
         'prioridad'
 
     ];
+
+    public function registros(){
+        return $this->hasMany('App\Models\Registro', 'equipos_id','id');
+    }
     
 }
 

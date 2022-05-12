@@ -42,8 +42,9 @@ Route::get('perfil/index',          [perfilController::class, 'index'])   ->name
 Route::get('perfil/create',         [perfilController::class, 'create'])  ->name('perfil.create');
 Route::post('perfil/store',                [perfilController::class, 'store'])   ->name('perfil.store');
 Route::get('perfil/{users}/edit',  [perfilController::class, 'edit'])    ->name('perfil.edit');
-Route::put('perfil/{perfil}',       [perfilController::class, 'update'])  ->name('perfil.update');
 Route::delete('delete/{id}',        [perfilController::class, 'delete'])->name('perfil.delete');
+Route::get('/editform/{id}',          [perfilController::class, 'editform'])->name('perfil.editform');
+Route::patch('/edit/{id}',        [perfilController::class,  'edit'])->name('perfil.edit');
 
 
 Route::get('equipos/reporte',  [registrosController::class, 'reporte'])->name('equipos.reporte');

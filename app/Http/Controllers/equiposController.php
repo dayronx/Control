@@ -75,8 +75,12 @@ class equiposController extends Controller
     }
 
     public function edit2(Equipos $equipos){
-  
-        return view('equipos.edit2', compact('equipos'));
+
+        $registros = Registro::all();
+        $registros->each(function($registro){
+            $registro->equipos;
+        });
+        return view('equipos.edit2', compact('equipos','registros'));
 
     }
     public function update(Request $request, Equipos $equipos){

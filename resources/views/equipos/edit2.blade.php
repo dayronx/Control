@@ -142,21 +142,21 @@
                     <thead class="text-dark">
                         <th>Nombre</th>
                         <th>mantenimiento</th>
-                        <th>malo</th>
+                        <th>estado</th>
                         <th>Tecnico</th>
                         <th>fecha</th>
                        
                     </thead>
                     <tbody>
-                      @foreach ($equipos as $equipo )
+                      @foreach ($registros as $equipos )
                       <tr style="text-align: center">
-                        <td>maquina</td>
-                        <td>tipos</td>
-                        <td>estado</td>
-                        <td>tecnico</td>
-                        <td>fecha</td>
-                   
+                          <td>{{$equipos->equipos->nombre}}</td>
+                          <td>{{$equipos->tipoMantenimiento}}</td>
+                          <td>{{$equipos->estadoFinal}}</td>
+                          <td>{{$equipos->nombre}}</td>
                      
+                          
+                  
                       </tr>
                        @endforeach
                     

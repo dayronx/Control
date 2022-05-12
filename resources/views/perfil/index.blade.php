@@ -8,6 +8,8 @@
 @stop
 
 @section('content')
+<br/>
+<br/>
 <div class="col-md-12">
     <div class="row">
       <div class="col-md-12">
@@ -51,7 +53,7 @@
                 
                      <td class="td-actions text-left">
                        <div class="row mb-3">
-
+                        <a href="{{route('perfil.editform', $users->id)}}" class="btn btn-outline-dark" > <i class="material-icons">edit</i></a>
                            
                            <form action="{{route('perfil.delete', $users->id)}}" method="POST" class="form-eliminar">
                              @csrf

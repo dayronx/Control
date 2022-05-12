@@ -96,7 +96,7 @@
                         <br/> 
                         <div class="mb-3">
                     
-                            <input type="text" class="form-control" id="email" placeholder="Nombre de la Maquina" name="nombreMaquina">
+                            <input type="text" class="form-control" id="email" placeholder="Id Maquina" name="equipos_id">
                         </div> 
                         <div class="row mb-3">
                             <div class="col-md-4">
