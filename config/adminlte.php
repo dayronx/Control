@@ -245,7 +245,8 @@ return [
             'icon'        => 'far fa-fw fa-bell',
             'icon_color' => 'yellow',
             'label_color' => 'success',
-            'route'    => 'equipos.alerta'
+            'route'    => 'equipos.alerta',
+            'can' =>  'admin',
         ],
         ['header' => 'account_settings'],
         [
@@ -253,6 +254,7 @@ return [
             'route'    => 'perfil.index',
             'icon_color' => 'blue',
             'icon' => 'fas fa-fw fa-users',
+            'can' =>  'admin',
         ],
         [
             'text' => 'change_password',
@@ -264,6 +266,7 @@ return [
             'text'    => 'Agregar Equipo',
             'icon'    => 'fas fa-fw fa-share',
             'icon_color' => 'green',
+            'can' =>  'admin',
             'route'    => 'equipos.create'
 
           

@@ -6,7 +6,9 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+
 class UserSeeder extends Seeder
+
 {
     /**
      * Run the database seeds.
@@ -20,7 +22,7 @@ class UserSeeder extends Seeder
             'name'=>'Dayron Torres',
             'email'=>'dayronttorres@gmail.com',
             'password'=>bcrypt('12345678')
-        ])->assignRole('Admin');
+        ])->assignRole('Administrador');
 
     }
 }

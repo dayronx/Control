@@ -54,13 +54,16 @@
                                 <div class="row mb-3">
 
                                      <a href="{{route('equipos.edit', $equipo->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
-                                    <form action="{{route('equipos.destroy', $equipo->id)}} " method="POST" class="form-eliminar">
-                                      @csrf
-                                      @method('DELETE')
-                                      <button  class="btn btn-danger" type="submit" rel="tooltip">
-                                        <i class="material-icons">delete</i>
-                                     </button>
-                                    </form>
+                                     @can('admin')
+                            <form action="{{route('equipos.destroy', $equipo->id)}} " method="POST" class="form-eliminar">
+
+                              @csrf
+                              @method('DELETE')
+                              <button  class="btn btn-danger" type="submit" rel="tooltip">
+                                <i class="material-icons">delete</i>
+                             </button>
+                            </form>
+                            @endcan
                                     <a href="{{route('equipos.edit2', $equipo->id)}}" class="btn btn-success"><i class="material-icons">visibility</i></a>
                                   
                                 </div>

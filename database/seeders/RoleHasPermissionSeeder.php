@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
-class RoleSeeder extends Seeder
+class RoleHasPermissionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,11 +16,7 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-         $role1 = Role::create(['name'=>'Administrador']);
-         $role2 = Role::create(['name'=>'tècnico']);
-
-         
-         Permission::create(['name' => 'admin'])->assignRole($role1);
-         
+        $admin_permissions = Permission::all();
+        Role::findOrFail(1)->permissions()->sync($admin_permissions->pluck('id'));
     }
 }

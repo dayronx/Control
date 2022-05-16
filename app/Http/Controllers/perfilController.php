@@ -18,17 +18,22 @@ class perfilController extends Controller
         return view('perfil/index',compact('user'));
     }
 
-    public function  store(Request $request){
-        User::create($request->only('name','apellido', 'email', 'password','entidad','profesion','id'));
+    public function  store(Request $request ){
+        $user= User::create($request->only('name', 'email')+[
+            'password'=>bcrypt($request->input('password'))
+        ]);
 
-       
+        $roles = $request->input('roles',[]);
+
+        $user->syncRoles($roles);
 
 
         return redirect()->route('perfil.index');
     }
 
     public function  create(){
-        return view('perfil.create');
+        $roles = Role::all()->pluck('name','id');
+        return view('perfil.create' , compact('roles'));
     }
 
     public function delete($id){
@@ -37,16 +42,23 @@ class perfilController extends Controller
         return redirect()->route('perfil.index');
 
     }
-    public function editform($id){
-        $usuario = User::findOrFail($id);
+    //EDITAR
+    public function editform(User $user){
 
-        return view('perfil.edit', compact('usuario'));
+        $roles = Role::all()->pluck('name','id');
+
+        $user->load('roles');
+      
+
+        return view('perfil.edit', compact('user','roles'));
     }
+    //ACTUALIZAR
+
     public function edit(Request $request, $id){
         $datos = request()->except((['_token', '_method']));
         User::where('id', '=', $id)->update($datos);
 
-        return view('perfil.index');
+        return redirect()->route('perfil.index');
     }
 
 }   

@@ -21,25 +21,53 @@
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                    
-                  <form action="{{route('perfil.edit', $usuario->id)}}" method="PATCH" enctype="multipart/form-data">
+                  <form action="{{route('perfil.edit', $user->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
+
                     <div class="mb-3">
                       <label class="form-label">Nombres</label>
                       <input type="text" class="form-control" id="email" placeholder="Nombres" name="name"
-                       value="{{$usuario->name}}">
+                       value="{{$user->name}}">
                       
                     </div> 
                    
                     <div class="mb-3">
                        <label class="form-label">Correo</label>
                        <input type="text" class="form-control" id="email" placeholder="Correo electronico" name="email"
-                       value="{{$usuario->email}}">
+                       value="{{$user->email}}">
                     </div> 
                     <div class="mb-3">
                       <label class="form-label">Contraseña</label>
-                      <input type="password" class="form-control" id="email" placeholder="Correo electronico" name="password"
-                      value="{{$usuario->password}}">
+                      <input type="password" class="form-control" id="email" placeholder="Correo electronico" name="password">
                    </div> 
+                   <div class="row">
+                    <label for="roles" class="col-sm-2 col-form-label">Roles</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <div class="tab-content">
+                                <div class="tab-pane active">
+                                    <table class="table">
+                                        <tbody>
+                                            @foreach ($roles as $id => $role)
+                                                    <td>
+                                                        <input class="form-check-input" type="checkbox" name="roles[]"
+                                                            value="{{$id}}" {{$user->roles->contains($id) ? 'checked' : ''}}>
+                                                        <span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        {{$role}}
+                                                    </td>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     <div class="d-flex justify-content-end col-12">
                       <button type="submit"  class="btn btn-outline-dark"  >GUARDAR CAMBIOS</button>
                     </div>
