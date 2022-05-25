@@ -36,21 +36,19 @@
             <div class="table-responsive">
               <table class="table">
                 <thead class="text-dark">
+                  <th>ID</th>
                   <th>Nombres</th>
-                  <th>Apellidos</th>
+                  <th>Rol</th>
                   <th>Correo</th>
-            
                   <th>Acciones</th>
                 </thead>
                 <tbody>
                   @foreach ($user as $users  )
                   <tr style="text-align: center">
+                     <td>{{$users->id}}</td>
                      <td>{{$users->name}}</td>
-                    
-                     <td>{{$users->email}}</td>
-                 
-               
-                
+                     <td>{{$users->name}}</td>
+                     <td>{{$users->email}}</td>  
                      <td class="td-actions text-left">
                        <div class="row mb-3">
                         <a href="{{route('perfil.editform', $users->id)}}" class="btn btn-outline-dark" > <i class="material-icons">edit</i></a>
@@ -62,11 +60,8 @@
                                <i class="material-icons">delete</i>
                             </button>
                            </form>
-                          
-                         
-                       </div>
-                    
-                     </td>   
+                        </div>
+                      </td>   
                   </tr>
                @endforeach
                 
@@ -90,3 +85,72 @@
     <link rel="stylesheet" href="css/dashboard.css">
 @stop
 
+@section('js')
+
+@if (session('eliminar')=='ok')
+        <script>
+            Swal.fire(
+                '¡Eliminado!',
+                'La informacion se elimino correctamente.',
+                'success'
+            ) 
+        </script>
+    @endif
+
+    @if (session('actualizar')=='ok')
+        <script>
+            Swal.fire(
+                '¡Actualizado!',
+                'La informacion se actualizo correctamente.',
+                'success'
+            ) 
+        </script>
+    @endif
+
+    @if (session('crear')=='ok')
+        <script>
+            Swal.fire(
+                '¡Agregado!',
+                'La informacion se creo correctamente.',
+                'success'
+            ) 
+        </script>
+    @endif
+
+    <script>
+        $('.form-eliminar').submit(function(e){
+            e.preventDefault();
+            const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+            })
+            swalWithBootstrapButtons.fire({
+                title: '¿Estas seguro?',
+                text: "¡Este perfil se eliminara definitivamente!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: '¡Si, eliminar!',
+                cancelButtonText: 'Cancelar',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+
+                    this.submit();
+
+                }else if (
+                    /* Read more about handling dismissals below */
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                    'Cancelado',
+                    '¡El perfil no se elimino!',
+                    'error'
+                    )
+                }
+            })
+        })
+    </script>
+@stop

@@ -19,12 +19,16 @@ class perfilController extends Controller
     }
 
     public function  store(Request $request ){
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
+        ]);
         $user= User::create($request->only('name', 'email')+[
             'password'=>bcrypt($request->input('password'))
         ]);
 
         $roles = $request->input('roles',[]);
-
         $user->syncRoles($roles);
 
 
@@ -39,7 +43,7 @@ class perfilController extends Controller
     public function delete($id){
         User::destroy($id);
 
-        return redirect()->route('perfil.index');
+        return redirect()->route('perfil.index')->with('eliminar','ok');
 
     }
     //EDITAR
@@ -54,11 +58,19 @@ class perfilController extends Controller
     }
     //ACTUALIZAR
 
-    public function edit(Request $request, $id){
-        $datos = request()->except((['_token', '_method']));
-        User::where('id', '=', $id)->update($datos);
+    public function edit(Request $request, User $user ){
+        $data = $request->only('name','apellido','segapellido','cc','email');
 
-        return redirect()->route('perfil.index');
+        $password = $request->input('password');
+
+        if($password)
+            $data['password'] = bcrypt($password);
+
+        $user->update($data);
+
+        
+
+        return redirect()->route('perfil.index')->with('actualizar','ok');
     }
 
 }   

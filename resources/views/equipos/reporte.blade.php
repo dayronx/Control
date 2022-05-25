@@ -25,17 +25,9 @@
         <div class="container mt-4">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <br/>
+                    
                   
-                    <div  class="row mb-3">
-                        <div class="col-md-12" style="align-content: center">
-                            <h3  style="align-content: center">Reporte de Mantenimiento</h3>
-                        </div>
-                  
-                      
-                   </div> 
-                  
-                   <hr> 
+                 
                 
                    <br/>
                    <br/> 
@@ -94,36 +86,12 @@
                         <br/>
                         <br/> 
                         <br/> 
-                        <div class="mb-3">
-                    
-                            <input type="text" class="form-control" id="email" placeholder="Id Maquina" name="equipos_id">
-                        </div> 
-                        <div class="row mb-3">
-                            <div class="col-md-4">
-                                
-                                <input type="text" class="form-control"placeholder="Marca" name="marca">
-    
-                            </div>
-                            <div class="col-md-4">
-                              
-                                <input type="number" placeholder="Cantidad" class="form-control" name="cantidad" >
-    
-                            </div>
-                            <div class="col-md-4">
-                            
-                                <input type="number" placeholder="Prioridad" class="form-control" name="prioridad" >
-    
-                            </div>
-                            
-                         </div>  
+                      
+                   
                      <div class="row mb-3">
                         <div class="col-md-4">
-                          
-                            <label class="form-label">Tipo de Maquina:</label>
-                            <select class="form-select" aria-label="Default select example"  name="tipoMaquina">
-                                <option value="calor">Maquina de Calor</option>
-                                <option value="frio">Maquina de Frio</option>
-                            </select>
+                            <label for="email" class="form-label">ID: </label>
+                            <input type="text" class="form-control" id="email" placeholder="Id Maquina" name="equipos_id">
                         </div>
                         <div class="col-md-4">
                             <label for="email" class="form-label">Ubicacion: </label>

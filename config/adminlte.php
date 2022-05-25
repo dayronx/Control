@@ -256,11 +256,7 @@ return [
             'icon' => 'fas fa-fw fa-users',
             'can' =>  'admin',
         ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
+    
         ['header' => 'EQUIPOS'],
         [
             'text'    => 'Agregar Equipo',

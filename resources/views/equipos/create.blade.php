@@ -44,7 +44,7 @@
                         </div>
                         <div class="col-md-4">
                             <label class="form-label">Cantidad:</label>
-                            <input type="number" placeholder="Cantidad" class="form-control" name="cantidad" id="apellido">
+                            <input type="number" placeholder="Cantidad" class="form-control" name="cantidad" >
 
                         </div>
                    
@@ -54,7 +54,7 @@
                         <div class="col-md-4">
 
                             <label class="form-label">Tipo de Mantenimiento que Requiere:</label>
-                            <select class="form-select" aria-label="Default select example"  name="Mantenimiento">
+                            <select class="form-select" aria-label="Default select example"  name="mantenimiento">
                                 <option value="Preventivo">Preventivo</option>
                                 <option value="Correctivo">Correctivo</option>
                               
@@ -138,8 +138,10 @@
                        
                     </div>
                     <div class="d-flex justify-content-end col-12">
-                      <button type="submit"  class= "btn btn-secondary" >GUARDAR FORMULARIO</button>
+                      <button type="submit"  class="btn btn-outline-dark" >GUARDAR FORMULARIO</button>
                     </div>
+                    <br/>
+                    <br/>
                   
                 </form>   
             </div> 
@@ -161,7 +163,58 @@
 
 @section('js')
     <script> console.log('Hi!'); </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+    @if (session('crear')=='ok')
+        <script>
+            Swal.fire(
+                '¡Equipo Agregado!',
+                'La informacion se guardó correctamente.',
+                'success'
+            ) 
+        </script>
+    @endif
+
+    <script>
+
+        $('.form-eliminar').submit(function(e){
+            e.preventDefault();
+            const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-success',
+                cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+            })
+            swalWithBootstrapButtons.fire({
+                title: '¿Estas seguro?',
+                text: "¡Esta informacion se eliminara definitivamente!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: '¡Si, eliminar!',
+                cancelButtonText: 'Cancelar',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+
+                    this.submit();
+
+                }else if (
+                    /* Read more about handling dismissals below */
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                    'Cancelado',
+                    '¡La informacion no se elimino!',
+                    'error'
+                    )
+                }
+            })
+        })
+    </script>
+
 @stop
 
 

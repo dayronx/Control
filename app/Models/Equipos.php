@@ -18,10 +18,7 @@ class Equipos extends Model
         'tipo',
         'estado',
         'PDF',
-        'estadoFinal',
-        'cambioDePiezas',
-        'Mantenimiento',
-        'foto2',
+        'mantenimiento',
         'prioridad'
 
     ];

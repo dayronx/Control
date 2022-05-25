@@ -27,44 +27,46 @@
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table">
-                      <thead class="text-primary">
+                      <thead class="text-dark">
                         <tr style="text-align: center">
+                          <th>ID</th>
                           <th>Nombre</th>
                           <th>Marca</th>
                           <th>Cantidad</th>
                           <th>Tipo</th>
                           <th>Estado</th>
                           <th>Ubicacion</th>
-                          <th>Ficha tecnica</th>
+                          
                           <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
                         @foreach ($equipos as $equipo )
                            <tr style="text-align: center">
+                              <td>{{$equipo->id}}</td>
                               <td>{{$equipo->nombre}}</td>
                               <td>{{$equipo->marca}}</td>
                               <td>{{$equipo->cantidad}}</td>
                               <td>{{$equipo->tipo}}</td>
                               <td>{{$equipo->estado}}</td>
                               <td>{{$equipo->ubicacion}}</td>
-                              <td><img src="{{asset('img/pdf.png')}}" height="40" width="40"></td>
+                              
                               <td class="td-actions text-left">
                                 
                                 <div class="row mb-3">
 
-                                     <a href="{{route('equipos.edit', $equipo->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
+                                     <a href="{{route('equipos.edit', $equipo->id)}}" class="btn btn-outline-dark" ><i class="material-icons">edit</i></a>
                                      @can('admin')
                                         <form action="{{route('equipos.destroy', $equipo->id)}} " method="POST" class="form-eliminar">
 
                                          @csrf
                                           @method('DELETE')
-                                         <button  class="btn btn-danger" type="submit" rel="tooltip">
+                                         <button  class="btn btn-outline-dark"  type="submit" rel="tooltip">
                                                        <i class="material-icons">delete</i>
                                          </button>
                                         </form>
                                      @endcan           
-                                    <a href="{{route('equipos.edit2', $equipo->id)}}" class="btn btn-success"><i class="material-icons">visibility</i></a>
+                                    <a href="{{route('equipos.edit2', $equipo->id)}}" class="btn btn-outline-dark" ><i class="material-icons">visibility</i></a>
                                   
                                 </div>
                              

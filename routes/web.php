@@ -37,6 +37,8 @@ Route::get('equipos/{equipos}/edit2',      [equiposController::class, 'edit2'   
 Route::put('equipos/{equipos}',            [equiposController::class, 'update'   ])                         ->name('equipos.update');
 Route::delete('equipos/{equipos}',         [equiposController::class, 'destroy'  ])                         ->name('equipos.destroy');
 
+//Route::put('equipos/{equipos}',            [equipos2Controller::class, 'update2'  ])                         ->name('equipos.update2');
+
 
 Route::get('perfil/index',                 [perfilController::class, 'index'     ])->middleware('can:admin')->name('perfil.index');
 Route::get('perfil/create',                [perfilController::class, 'create'    ])->middleware('can:admin')->name('perfil.create');
@@ -44,7 +46,7 @@ Route::post('perfil/store',                [perfilController::class, 'store'    
 Route::get('perfil/{users}/edit',          [perfilController::class, 'edit'      ])->middleware('can:admin')->name('perfil.edit');
 Route::delete('delete/{id}',               [perfilController::class, 'delete'    ])->middleware('can:admin')->name('perfil.delete');
 Route::get('/editform/{user}',             [perfilController::class, 'editform'  ])->middleware('can:admin')->name('perfil.editform');
-Route::put('/edit/{id}',                   [perfilController::class,  'edit'     ])->middleware('can:admin')->name('perfil.edit');
+Route::put('/edit/{user}',                 [perfilController::class,  'edit'     ])->middleware('can:admin')->name('perfil.edit');
 
 
 Route::get('equipos/reporte',              [registrosController::class, 'reporte'])                         ->name('equipos.reporte');

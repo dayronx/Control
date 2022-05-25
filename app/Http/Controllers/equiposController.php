@@ -36,6 +36,22 @@ class equiposController extends Controller
  
    
     public function store(Request $request){
+        $request->validate([
+            'nombre'       => 'required',
+            'nombre'       => 'required',
+            'marca'        => 'required',
+            'cantidad'     => 'required',
+            'ubicacion'    => 'required',
+            'descripcion'  => 'required',
+            'foto'         => 'required',
+            'tipo'         => 'required',
+            'estado'       => 'required',
+            'PDF'          => 'required',
+            'mantenimiento'=> 'required',
+            'prioridad'    => 'required',
+           
+        
+        ]);
 
         $arch = $request->file('foto')->store('public/images');
         $file = Storage::url($arch);
@@ -43,7 +59,7 @@ class equiposController extends Controller
         $arch2 = $request->file('PDF')->store('public/pdf');
         $pdf = Storage::url($arch2);
 
-        Equipos::create($request->only('nombre', 'marca', 'cantidad','tipo','ubicacion','estado', 'Mantenimiento','descripcion', 'prioridad')+[
+        Equipos::create($request->only('nombre', 'marca', 'cantidad','tipo','ubicacion','estado', 'mantenimiento','descripcion', 'prioridad')+[
             'foto' => $file,
             'PDF' => $pdf
 
@@ -52,7 +68,7 @@ class equiposController extends Controller
        
 
 
-        return redirect()->route('equipos.create');
+        return redirect()->route('equipos.create')->with('crear','ok');
 
     }
 
@@ -83,9 +99,23 @@ class equiposController extends Controller
         return view('equipos.edit2', compact('equipos','registros'));
 
     }
+
+    //actualiza maquinas de calor
     public function update(Request $request, Equipos $equipos){
+        $request->validate([
+            'nombre'       => 'required',
+            // 'marca'        => 'required',
+            // 'cantidad'     => 'required',
+            // 'ubicacion'    => 'required',
+            // 'tipo'         => 'required',
+            // 'estado'       => 'required',
+            // 'prioridad'    => 'required',
+            //'descripcion'    => 'required',
+           
         
-        $update= $request-> only('nombre', 'marca', 'cantidad','tipo', 'descripcion', 'cambioDePiezas', 'Mantenimiento', 'estado','prioridad');
+        ]);
+        
+        $update= $request-> only('nombre', 'marca', 'cantidad','tipo', 'descripcion',  'mantenimiento', 'estado','prioridad');
 
         $equipos->update($update);
 
@@ -101,9 +131,13 @@ class equiposController extends Controller
             $equipos->update(['foto2' => $file]); 
         }
 
-        return redirect()->route('equipos');
+        return redirect()->route('equipos.calor')->with('actualizar','ok');
         
     }
+    
+
+    
+
     public function destroy(Equipos $equipos){
         $file = str_replace('storage', 'public', $equipos->foto);
         Storage::delete($file);
@@ -115,7 +149,7 @@ class equiposController extends Controller
         Storage::delete($arch2);
         
         $equipos->delete();  
-        return redirect()->back();
+        return redirect()->back()->with('eliminar','ok');
     }
 
     public function calor(Request $request){

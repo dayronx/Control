@@ -1,4 +1,3 @@
-
 @extends('adminlte::page')
 
 @section('title', 'Editar Equipo')
@@ -33,7 +32,7 @@
              <div class="col-md-8 offset-md-2">
                  <h3>Editar Equipo</h3>
                  <hr>
-                 <form action="{{route('equipos.update', $equipos->id)}}" method="POST">
+                 <form action="{{route('equipos.update2', $equipos->id)}}" method="POST">
                      @csrf
                      @method('PUT')
  
